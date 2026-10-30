@@ -401,51 +401,368 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
-   8. ADMIN & CLIENT LOGIN PAGE (BLACK & GOLDEN LUXURY)
+   8. MODERN DARK SAAS / BOX OFFICE ADMIN LOGIN (MATCHING REFERENCE DESIGN)
    -------------------------------------------------------------------------- */
-body.login_admin {
-    background: radial-gradient(circle at 50% 30%, #1e222d 0%, #0c0e13 70%, #050608 100%) !important;
+body.login_admin.modern-auth-page {
+    background: #0b0c16 !important;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 30px 15px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-body.login_admin .authentication-form-wrapper {
+
+/* Ambient glowing orbs */
+.ambient-glow {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glow-top-left {
+    width: 500px;
+    height: 500px;
+    left: -120px;
+    top: -120px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
+    filter: blur(60px);
+}
+
+.glow-bottom-right {
+    width: 550px;
+    height: 550px;
+    right: -120px;
+    bottom: -120px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.22) 0%, rgba(168, 85, 247, 0.08) 45%, transparent 70%);
+    filter: blur(70px);
+}
+
+.glow-bottom-left {
+    width: 400px;
+    height: 400px;
+    left: 5%;
+    bottom: 0%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 65%);
+    filter: blur(60px);
+}
+
+/* Container */
+.auth-center-container {
     position: relative;
     z-index: 10;
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
 }
-body.login_admin .company-logo .logo-text,
-body.login_admin h1 {
-    color: #d4af37 !important;
-    font-weight: 700 !important;
-    letter-spacing: 1px;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+
+/* Main Card */
+.auth-card {
+    position: relative;
+    background: rgba(16, 20, 38, 0.88) !important;
+    backdrop-filter: blur(28px) !important;
+    -webkit-backdrop-filter: blur(28px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 22px !important;
+    box-shadow: 
+        0 25px 60px -10px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(99, 102, 241, 0.12) !important;
+    padding: 38px 36px 30px 36px !important;
+    overflow: hidden;
 }
-body.login_admin .tw-bg-white {
-    background: rgba(18, 21, 28, 0.94) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.35) !important;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.15) !important;
-    border-radius: 12px !important;
-    color: #e2e8f0 !important;
+
+/* Neon Gradient Top Line */
+.card-accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #9d4edd 0%, #6366f1 45%, #00f5d4 100%);
+    box-shadow: 0 0 16px rgba(0, 245, 212, 0.55);
 }
-body.login_admin label {
-    color: #f1d77a !important;
-    font-weight: 500;
+
+/* Logo */
+.auth-logo-wrap {
+    margin-bottom: 4px;
 }
-body.login_admin .form-control {
-    background: rgba(255, 255, 255, 0.06) !important;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+.auth-logo-wrap img {
+    max-height: 52px !important;
+    width: auto !important;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* Super Admin Portal Pill Badge */
+.auth-portal-badge-wrap {
+    margin-top: 14px;
+    margin-bottom: 16px;
+}
+.auth-portal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(49, 46, 129, 0.45);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    color: #a5b4fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(49, 46, 129, 0.3);
+}
+.portal-shield-icon {
+    color: #38bdf8;
+    flex-shrink: 0;
+}
+
+/* Headings */
+.auth-main-title {
     color: #ffffff !important;
-    border-radius: 6px !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+    margin: 0 0 8px 0 !important;
+    text-align: center !important;
 }
-body.login_admin .form-control:focus {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: #ffd700 !important;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+
+.auth-subtitle {
+    color: #8b92b2 !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin: 0 auto 24px auto !important;
+    max-width: 330px;
 }
-body.login_admin a {
-    color: #d4af37 !important;
+
+/* Form Styles */
+.auth-form-group {
+    margin-bottom: 18px !important;
 }
-body.login_admin a:hover {
-    color: #ffd700 !important;
-    text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+
+.auth-label {
+    color: #cbd5e1 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    margin-bottom: 7px !important;
+    display: block !important;
+    text-align: left !important;
+}
+
+/* Input Fields - Soft Light Periwinkle / Off-White */
+.auth-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.auth-input {
+    width: 100% !important;
+    height: 48px !important;
+    background: #edf2f7 !important;
+    border: 1.5px solid transparent !important;
+    border-radius: 12px !important;
+    color: #0f172a !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    padding-left: 44px !important;
+    padding-right: 42px !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.25s ease !important;
+}
+
+.auth-input::placeholder {
+    color: #94a3b8 !important;
+    font-weight: 400;
+}
+
+.auth-input:focus {
+    background: #ffffff !important;
+    border-color: #818cf8 !important;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25), 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+}
+
+/* Icons inside input */
+.auth-input-icon.left-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #818cf8;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.auth-input-icon.right-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    z-index: 2;
+    transition: color 0.2s ease;
+}
+
+.auth-input-icon.right-icon:hover {
+    color: #6366f1;
+}
+
+/* Options Row (Remember me + TLS) */
+.auth-options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+.auth-remember-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #8b92b2 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    margin: 0;
+    user-select: none;
+}
+
+.auth-checkbox {
+    accent-color: #6366f1 !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.auth-tls-secured {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* Gradient Submit Button */
+.auth-submit-btn {
+    width: 100% !important;
+    height: 48px !important;
+    background: linear-gradient(90deg, #5b5bf0 0%, #8b5cf6 45%, #ec4899 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.3px !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.45) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.auth-submit-btn:hover {
+    background: linear-gradient(90deg, #6868f7 0%, #9969f8 45%, #f45ca7 100%) !important;
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.65) !important;
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+.auth-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Forgot Password */
+.auth-fp-wrap {
+    margin-top: 14px;
+}
+
+.auth-fp-link {
+    color: #818cf8 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.auth-fp-link:hover {
+    color: #a5b4fc !important;
+    text-decoration: underline !important;
+}
+
+/* Footer Section */
+.auth-footer-security {
+    margin-top: 24px;
+}
+
+.ssl-security-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(6, 78, 59, 0.4);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(6, 78, 59, 0.25);
+    margin-bottom: 12px;
+}
+
+.auth-copyright-text {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.auth-copyright-text strong {
+    color: #94a3b8;
+}
+
+/* Alerts inside modern card */
+.auth-card .alert {
+    border-radius: 10px !important;
+    font-size: 13.5px !important;
+    margin-bottom: 16px !important;
+}
+.auth-card .alert-danger {
+    background: rgba(185, 28, 28, 0.3) !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    color: #fca5a5 !important;
+}
+.auth-card .alert-success {
+    background: rgba(6, 78, 59, 0.4) !important;
+    border: 1px solid rgba(16, 185, 129, 0.5) !important;
+    color: #86efac !important;
+}
+    border: 1px solid rgba(212, 175, 55, 0.6) !important;
+    color: #f3d36b !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(8px);
+}
 }

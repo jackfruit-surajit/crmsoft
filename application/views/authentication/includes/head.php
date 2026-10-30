@@ -10,6 +10,9 @@
         <?php echo e(get_option('companyname')); ?> - <?php echo _l('admin_auth_login_heading'); ?>
     </title>
     <?php echo app_compile_css('admin-auth'); ?>
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="<?php echo base_url('assets/plugins/font-awesome/css/fontawesome.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="<?php echo base_url('assets/plugins/font-awesome/css/solid.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="<?php echo base_url('assets/plugins/font-awesome/css/regular.min.css'); ?>">
     <style>
     body,
     html {
@@ -53,7 +56,7 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php } ?>
     <?php if (file_exists(FCPATH . 'assets/css/custom.css')) { ?>
-    <link href="<?php echo base_url('assets/css/custom.css'); ?>" rel="stylesheet" id="custom-css">
+    <link href="<?php echo base_url('assets/css/custom.css') . '?v=' . filemtime(FCPATH . 'assets/css/custom.css'); ?>" rel="stylesheet" id="custom-css">
     <?php } ?>
     <?php hooks()->do_action('app_admin_authentication_head'); ?>
 </head>
