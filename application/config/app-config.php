@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 * environments.
 *
 */
-define('APP_BASE_URL', 'http://localhost/crmsoft/');
+define('APP_BASE_URL', 'https://system.beetrx.com/');
 
 /*
 * --------------------------------------------------------------------------
@@ -43,17 +43,17 @@ define('APP_DB_HOSTNAME', 'localhost');
 /**
  * The username used to connect to the database
  */
-define('APP_DB_USERNAME', 'root');
+define('APP_DB_USERNAME', 'systembeetrx_systembeetrx');
 
 /**
  * The password used to connect to the database
  */
-define('APP_DB_PASSWORD', '');
+define('APP_DB_PASSWORD', 'u.so$I*qrO+TBSyg');
 
 /**
  * The name of the database you want to connect to
  */
-define('APP_DB_NAME', 'crmsoft');
+define('APP_DB_NAME', 'systembeetrx_crm');
 
 /**
  * @since  2.3.0

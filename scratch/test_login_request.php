@@ -1,5 +1,5 @@
 <?php
-$ch = curl_init('http://localhost/crmsoft/admin/authentication');
+$ch = curl_init('https://system.beetrx.com/admin/authentication');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, true);
 $res = curl_exec($ch);
@@ -11,13 +11,13 @@ $csrf = $matches[1] ?? '';
 preg_match_all('/Set-Cookie:\s*([^;]+)/i', $res, $cookieMatches);
 $cookies = implode('; ', $cookieMatches[1]);
 
-$ch2 = curl_init('http://localhost/crmsoft/admin/authentication');
+$ch2 = curl_init('https://system.beetrx.com/admin/authentication');
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch2, CURLOPT_HEADER, true);
 curl_setopt($ch2, CURLOPT_POST, true);
 curl_setopt($ch2, CURLOPT_HTTPHEADER, [
     "Cookie: $cookies",
-    "Referer: http://localhost/crmsoft/admin/authentication"
+    "Referer: https://system.beetrx.com/admin/authentication"
 ]);
 curl_setopt($ch2, CURLOPT_POSTFIELDS, http_build_query([
     'csrf_token_name' => $csrf,
