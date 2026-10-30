@@ -1,22 +1,429 @@
-body.login_admin:before {
-    content: " ";
-    background: rgba(31, 31, 31, 0.7);
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-}
-body.login_admin {
-  background: url('https://metroplex.beetrx.com/assets/images/background/1.jpg') no-repeat center center fixed; /* The full image url*/
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* ==========================================================================
+   PERFEX CRM - LUXURY BLACK & GOLDEN THEME
+   ========================================================================== */
+
+:root {
+    --bg-dark-obsidian: #0c0e12;
+    --bg-dark-surface: #14171f;
+    --bg-dark-card: #1c202a;
+    --gold-primary: #d4af37;
+    --gold-light: #f3d36b;
+    --gold-bright: #ffd700;
+    --gold-dark: #aa7c11;
+    --gold-deep: #8a6408;
+    --gold-gradient: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa7c11 100%);
+    --gold-gradient-hover: linear-gradient(135deg, #fae59a 0%, #e6be48 50%, #bd8c13 100%);
+    --gold-gradient-dark: linear-gradient(135deg, #2a2415 0%, #171510 100%);
+    --gold-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    --gold-glow: 0 0 12px rgba(212, 175, 55, 0.45);
+    --gold-border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
-body.customers_login {
-  background: url('https://metroplex.beetrx.com/assets/images/background/3.jpg') no-repeat center center fixed; /* The full image url*/
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* --------------------------------------------------------------------------
+   1. TOP NAVIGATION / HEADER (#header)
+   -------------------------------------------------------------------------- */
+#header {
+    background: #111318 !important;
+    border-bottom: 2px solid #d4af37 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+#header .hide-menu {
+    color: #d4af37 !important;
+    transition: all 0.3s ease;
+}
+#header .hide-menu:hover {
+    color: #ffd700 !important;
+    transform: scale(1.1);
+}
+
+#header .navbar-nav > li > a {
+    color: #e2e8f0 !important;
+    transition: color 0.2s ease;
+}
+#header .navbar-nav > li > a:hover,
+#header .navbar-nav > li > a:focus,
+#header .navbar-nav > li.open > a {
+    color: #d4af37 !important;
+    background: transparent !important;
+}
+
+#header .navbar-nav > li > a > span > svg {
+    color: #d4af37 !important;
+}
+
+/* Header search input */
+#top_search input#search_input {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    color: #f8fafc !important;
+    border-radius: 20px !important;
+    padding-left: 15px !important;
+    transition: all 0.3s ease;
+}
+#top_search input#search_input::placeholder {
+    color: rgba(212, 175, 55, 0.6) !important;
+}
+#top_search input#search_input:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #ffd700 !important;
+    box-shadow: var(--gold-glow) !important;
+}
+#top_search_button button {
+    color: #d4af37 !important;
+}
+
+/* Header Quick Create (+) Button */
+#header .tw-bg-primary-600,
+#header a .tw-bg-primary-600 {
+    background: var(--gold-gradient) !important;
+    color: #0b0d11 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+    border: 1px solid #ffd700 !important;
+    transition: all 0.3s ease;
+}
+#header .tw-bg-primary-600:hover,
+#header a:hover .tw-bg-primary-600 {
+    background: var(--gold-gradient-hover) !important;
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.8) !important;
+    transform: rotate(90deg);
+}
+
+/* Header notification / unread badge */
+#header .badge,
+.header-notifications .badge {
+    background-color: #d4af37 !important;
+    color: #0c0e12 !important;
+    font-weight: 700 !important;
+    border: 1px solid #000;
+}
+
+/* --------------------------------------------------------------------------
+   2. SIDEBAR (#menu, .sidebar)
+   -------------------------------------------------------------------------- */
+.admin .sidebar,
+.sidebar {
+    background: #0f1116 !important;
+    border-right: 1px solid rgba(212, 175, 55, 0.25) !important;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Logo container in sidebar */
+#side-menu > li:first-child,
+.sidebar #logo {
+    background: #0a0b0f !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+.sidebar .logo-text,
+.sidebar a.logo-text {
+    color: #d4af37 !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Sidebar Menu Items */
+.sidebar li a {
+    color: #d1d5db !important;
+    transition: all 0.25s ease;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+}
+
+/* Menu icons */
+.sidebar li a i.menu-icon,
+.sidebar li a .fa,
+.sidebar li a .fa-solid,
+.sidebar li a .fa-regular {
+    color: #d4af37 !important;
+    opacity: 0.9 !important;
+    transition: all 0.25s ease;
+}
+
+/* Menu hover */
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus,
+#setup-menu > li > a:hover,
+#setup-menu > li > a:focus {
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: #ffffff !important;
+    border-left: 3px solid #d4af37 !important;
+    border-radius: 0 6px 6px 0;
+}
+.sidebar .nav > li > a:hover i.menu-icon,
+#setup-menu > li > a:hover i.menu-icon {
+    color: #ffd700 !important;
+    text-shadow: var(--gold-glow);
+    transform: translateX(2px);
+}
+
+/* Active menu item */
+.admin #side-menu li.active > a,
+.admin #setup-menu li.active > a,
+.sidebar li.active > a {
+    background: var(--gold-gradient) !important;
+    color: #0b0d11 !important;
+    font-weight: 700 !important;
+    border-left: 3px solid #ffd700 !important;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4) !important;
+}
+.admin #side-menu li.active > a i.menu-icon,
+.admin #setup-menu li.active > a i.menu-icon,
+.sidebar li.active > a i.menu-icon {
+    color: #0b0d11 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+.admin #side-menu li.active > a .arrow,
+.sidebar li.active > a .arrow {
+    color: #0b0d11 !important;
+}
+
+/* Submenu container */
+.sidebar li .nav-second-level {
+    background: #080a0d !important;
+    border-left: 2px solid rgba(212, 175, 55, 0.2) !important;
+    margin-left: 15px;
+}
+.sidebar li .nav-second-level li a {
+    color: #9ca3af !important;
+    padding-left: 25px !important;
+}
+.sidebar li .nav-second-level li a:hover {
+    color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.08) !important;
+}
+.sidebar li .nav-second-level li.active a {
+    background: var(--gold-gradient) !important;
+    color: #0b0d11 !important;
+    font-weight: 700 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35) !important;
+}
+
+/* Setup menu & customizer toggle */
+.setup-menu-wrapper,
+#setup-menu {
+    background: #0f1116 !important;
+    border-right: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. BUTTONS (ROYAL GOLD & LUXURY BLACK)
+   -------------------------------------------------------------------------- */
+.btn-primary,
+button.btn-primary,
+input[type="submit"].btn-primary,
+.tw-bg-primary-600 {
+    background: var(--gold-gradient) !important;
+    border-color: #d4af37 !important;
+    color: #0c0e12 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35) !important;
+    transition: all 0.25s ease !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary,
+.tw-bg-primary-600:hover,
+.tw-bg-primary-700 {
+    background: var(--gold-gradient-hover) !important;
+    border-color: #ffd700 !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+.tw-border-primary-600 {
+    border-color: #d4af37 !important;
+}
+.tw-text-primary-600 {
+    color: #d4af37 !important;
+}
+.tw-ring-primary-500 {
+    --tw-ring-color: #d4af37 !important;
+}
+
+/* Outline / Default Buttons */
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+    border-color: #d4af37 !important;
+    color: #aa7c11 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. TABS & BREADCRUMBS
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+    border-bottom: 2px solid rgba(212, 175, 55, 0.25) !important;
+}
+.nav-tabs > li > a {
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    color: #b8860b !important;
+    border-color: transparent !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #9a6f08 !important;
+    border-bottom: 3px solid #d4af37 !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+}
+.nav-tabs > li.active > a i.menu-icon,
+.nav-tabs > li > a:hover i.menu-icon {
+    color: #d4af37 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. PANELS, CARDS & WIDGETS
+   -------------------------------------------------------------------------- */
+.panel {
+    border-radius: 8px !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+.panel-heading {
+    border-top: 3px solid #d4af37 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    font-weight: 600 !important;
+    background: #fafafa !important;
+    color: #111827 !important;
+}
+
+/* Dashboard Summary / Top KPI Cards */
+.top_stats_wrapper {
+    border-left: 3px solid #d4af37 !important;
+    transition: all 0.25s ease;
+}
+.top_stats_wrapper:hover {
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Progress bar in Golden gradient */
+.progress-bar-success,
+.progress-bar-primary,
+.progress-bar {
+    background: var(--gold-gradient) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. TABLES & DATATABLES
+   -------------------------------------------------------------------------- */
+table.dataTable thead th,
+.table thead th {
+    background: #14171f !important;
+    color: #f5d77f !important;
+    border-bottom: 2px solid #d4af37 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+}
+table.dataTable thead th a {
+    color: #f5d77f !important;
+}
+.table tbody tr:hover {
+    background-color: rgba(212, 175, 55, 0.04) !important;
+}
+
+/* DataTables pagination active page */
+.dataTables_paginate .pagination > .active > a,
+.dataTables_paginate .pagination > .active > span,
+.dataTables_paginate .pagination > .active > a:hover,
+.dataTables_paginate .pagination > .active > span:hover {
+    background: var(--gold-gradient) !important;
+    border-color: #d4af37 !important;
+    color: #0b0d11 !important;
+    font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. BADGES, LABELS & TAGS
+   -------------------------------------------------------------------------- */
+.label-primary {
+    background-color: rgba(212, 175, 55, 0.15) !important;
+    color: #9a6f08 !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    font-weight: 600 !important;
+}
+a.label-primary:hover {
+    background-color: rgba(212, 175, 55, 0.3) !important;
+    color: #785304 !important;
+}
+
+/* Form input focus in gold */
+.form-control:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Links */
+a {
+    color: #0f1115;
+    transition: color 0.2s ease;
+}
+a:hover,
+a:focus {
+    color: #b8860b !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. ADMIN & CLIENT LOGIN PAGE (BLACK & GOLDEN LUXURY)
+   -------------------------------------------------------------------------- */
+body.login_admin {
+    background: radial-gradient(circle at 50% 30%, #1e222d 0%, #0c0e13 70%, #050608 100%) !important;
+    min-height: 100vh;
+}
+body.login_admin .authentication-form-wrapper {
+    position: relative;
+    z-index: 10;
+}
+body.login_admin .company-logo .logo-text,
+body.login_admin h1 {
+    color: #d4af37 !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+body.login_admin .tw-bg-white {
+    background: rgba(18, 21, 28, 0.94) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.15) !important;
+    border-radius: 12px !important;
+    color: #e2e8f0 !important;
+}
+body.login_admin label {
+    color: #f1d77a !important;
+    font-weight: 500;
+}
+body.login_admin .form-control {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+}
+body.login_admin .form-control:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+}
+body.login_admin a {
+    color: #d4af37 !important;
+}
+body.login_admin a:hover {
+    color: #ffd700 !important;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
