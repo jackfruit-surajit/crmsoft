@@ -309,29 +309,137 @@ input[type="submit"].btn-primary,
 }
 
 /* --------------------------------------------------------------------------
-   5. PANELS, CARDS & WIDGETS
+   5. PANELS, CARDS & WIDGETS (LUXURY BLACK & GOLDEN DARK THEME)
    -------------------------------------------------------------------------- */
-.panel {
-    border-radius: 8px !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+/* Admin Canvas & Workspace Background */
+body.admin,
+body.admin #wrapper,
+.admin .content,
+.admin #content {
+    background-color: #0b0d14 !important;
+    color: #e2e8f0;
 }
-.panel-heading {
+
+/* Dark Cards, Panels & Widgets */
+.admin .panel,
+.admin .panel_s,
+.admin .panel-body,
+.admin .panel-default,
+.admin .widget,
+.admin .todo-panel,
+.admin .card,
+.admin .tw-bg-white,
+.admin .bg-white,
+.admin .kan-ban-col {
+    background-color: #141722 !important;
+    border-color: rgba(212, 175, 55, 0.2) !important;
+    color: #e2e8f0 !important;
+}
+
+.admin .panel,
+.admin .panel_s,
+.admin .widget {
+    border-radius: 10px !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+.admin .panel-heading {
     border-top: 3px solid #d4af37 !important;
-    border-bottom: 1px solid #e5e7eb !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
     font-weight: 600 !important;
-    background: #fafafa !important;
-    color: #111827 !important;
+    background: #0e1017 !important;
+    color: #f3d36b !important;
+}
+
+.admin .panel-footer {
+    background: #0e1017 !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: #cbd5e1 !important;
+}
+
+.admin .hr-panel-heading,
+.admin .hr-panel-separator {
+    border-color: rgba(212, 175, 55, 0.15) !important;
 }
 
 /* Dashboard Summary / Top KPI Cards */
-.top_stats_wrapper {
-    border-left: 3px solid #d4af37 !important;
+.admin .top_stats_wrapper {
+    background: #161926 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(212, 175, 55, 0.22) !important;
+    border-left: 4px solid #d4af37 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+    color: #e2e8f0 !important;
     transition: all 0.25s ease;
 }
-.top_stats_wrapper:hover {
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15) !important;
+.admin .top_stats_wrapper:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55), 0 0 15px rgba(212, 175, 55, 0.25) !important;
     transform: translateY(-2px);
+    border-left-color: #ffd700 !important;
+}
+.admin .top_stats_wrapper .tw-text-neutral-800,
+.admin .top_stats_wrapper .tw-text-neutral-700,
+.admin .top_stats_wrapper .tw-text-neutral-600,
+.admin .top_stats_wrapper .text-neutral-600,
+.admin .top_stats_wrapper span.tw-truncate {
+    color: #cbd5e1 !important;
+}
+.admin .top_stats_wrapper .tw-font-semibold {
+    color: #f5d77f !important;
+}
+.admin .top_stats_wrapper svg {
+    color: #d4af37 !important;
+}
+.admin .top_stats_wrapper .progress {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px;
+}
+
+/* Typography & Headings inside Dark Cards */
+.admin .panel_s h1, .admin .panel_s h2, .admin .panel_s h3, .admin .panel_s h4, .admin .panel_s h5, .admin .panel_s h6,
+.admin .panel h1, .admin .panel h2, .admin .panel h3, .admin .panel h4, .admin .panel h5, .admin .panel h6,
+.admin .widget h1, .admin .widget h2, .admin .widget h3, .admin .widget h4, .admin .widget h5, .admin .widget h6 {
+    color: #ffffff !important;
+}
+
+.admin .panel_s .text-muted,
+.admin .panel .text-muted,
+.admin .widget .text-muted {
+    color: #94a3b8 !important;
+}
+
+.admin .panel_s .tw-text-neutral-800,
+.admin .panel_s .tw-text-neutral-700,
+.admin .panel_s .tw-text-neutral-600,
+.admin .panel-body .tw-text-neutral-800,
+.admin .panel-body .tw-text-neutral-700,
+.admin .panel-body .tw-text-neutral-600 {
+    color: #cbd5e1 !important;
+}
+
+.admin .panel_s .tw-text-neutral-900,
+.admin .panel-body .tw-text-neutral-900 {
+    color: #ffffff !important;
+}
+
+.admin .widget-dragger {
+    color: #d4af37 !important;
+}
+
+/* Links inside Admin & Cards */
+.admin #wrapper a,
+.admin .panel a,
+.admin .panel_s a,
+.admin .table a {
+    color: #f5d77f;
+    transition: color 0.2s ease;
+}
+.admin #wrapper a:hover,
+.admin .panel a:hover,
+.admin .panel_s a:hover,
+.admin .table a:hover {
+    color: #ffd700 !important;
 }
 
 /* Progress bar in Golden gradient */
@@ -342,28 +450,62 @@ input[type="submit"].btn-primary,
 }
 
 /* --------------------------------------------------------------------------
-   6. TABLES & DATATABLES
+   6. TABLES & DATATABLES IN DARK CARDS
    -------------------------------------------------------------------------- */
-table.dataTable thead th,
-.table thead th {
-    background: #14171f !important;
+.admin table.dataTable thead th,
+.admin .table thead th {
+    background: #0e1017 !important;
     color: #f5d77f !important;
     border-bottom: 2px solid #d4af37 !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px;
 }
-table.dataTable thead th a {
+.admin table.dataTable thead th a,
+.admin .table thead th a {
     color: #f5d77f !important;
 }
-.table tbody tr:hover {
-    background-color: rgba(212, 175, 55, 0.04) !important;
+.admin .table > tbody > tr > td,
+.admin .table > tbody > tr > th,
+.admin .table > tfoot > tr > td,
+.admin .table > tfoot > tr > th {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+    color: #e2e8f0 !important;
+}
+.admin .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+.admin .table tbody tr:hover td {
+    background-color: rgba(212, 175, 55, 0.08) !important;
 }
 
-/* DataTables pagination active page */
-.dataTables_paginate .pagination > .active > a,
-.dataTables_paginate .pagination > .active > span,
-.dataTables_paginate .pagination > .active > a:hover,
-.dataTables_paginate .pagination > .active > span:hover {
+/* DataTables pagination & controls */
+.admin .dataTables_wrapper .dataTables_info,
+.admin .dataTables_wrapper .dataTables_length,
+.admin .dataTables_wrapper .dataTables_paginate {
+    color: #94a3b8 !important;
+}
+.admin .dataTables_wrapper .dataTables_filter input {
+    background-color: #0c0e14 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #f8fafc !important;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.admin .dataTables_paginate .pagination > li > a,
+.admin .dataTables_paginate .pagination > li > span {
+    background-color: #10121a !important;
+    border-color: rgba(212, 175, 55, 0.2) !important;
+    color: #cbd5e1 !important;
+}
+.admin .dataTables_paginate .pagination > li > a:hover {
+    background-color: rgba(212, 175, 55, 0.2) !important;
+    color: #ffd700 !important;
+}
+.admin .dataTables_paginate .pagination > .active > a,
+.admin .dataTables_paginate .pagination > .active > span,
+.admin .dataTables_paginate .pagination > .active > a:hover,
+.admin .dataTables_paginate .pagination > .active > span:hover {
     background: var(--gold-gradient) !important;
     border-color: #d4af37 !important;
     color: #0b0d11 !important;
@@ -371,33 +513,181 @@ table.dataTable thead th a {
 }
 
 /* --------------------------------------------------------------------------
-   7. BADGES, LABELS & TAGS
+   7. FORM CONTROLS, MODALS & ALERTS IN DARK CARDS
    -------------------------------------------------------------------------- */
+.admin .form-control,
+.admin select.form-control,
+.admin textarea.form-control {
+    background-color: #0c0e14 !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: #f8fafc !important;
+}
+.admin .form-control::placeholder {
+    color: #64748b !important;
+}
+.admin .form-control:focus {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25) !important;
+}
+.admin .control-label {
+    color: #e2e8f0 !important;
+}
+.admin .bootstrap-select .btn {
+    background-color: #0c0e14 !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+.admin .bootstrap-select .dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+.admin .bootstrap-select .dropdown-menu li a {
+    color: #e2e8f0 !important;
+}
+.admin .bootstrap-select .dropdown-menu li a:hover,
+.admin .bootstrap-select .dropdown-menu li.selected a {
+    background-color: rgba(212, 175, 55, 0.15) !important;
+    color: #ffd700 !important;
+}
+
+/* Modals & Popovers */
+.admin .modal-content {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+}
+.admin .modal-header {
+    background-color: #0e1017 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-top: 3px solid #d4af37 !important;
+}
+.admin .modal-header .modal-title {
+    color: #f3d36b !important;
+}
+.admin .modal-header .close {
+    color: #d4af37 !important;
+    opacity: 0.8;
+}
+.admin .modal-footer {
+    background-color: #0e1017 !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Dropdowns */
+.admin .dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+.admin .dropdown-menu > li > a {
+    color: #cbd5e1 !important;
+}
+.admin .dropdown-menu > li > a:hover,
+.admin .dropdown-menu > li > a:focus {
+    background-color: rgba(212, 175, 55, 0.15) !important;
+    color: #ffd700 !important;
+}
+.admin .dropdown-menu .divider {
+    background-color: rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Activity Feed & Lists */
+.admin .activity-feed .feed-item {
+    border-left-color: #d4af37 !important;
+    color: #cbd5e1 !important;
+}
+.admin .activity-feed .feed-item:after {
+    background-color: #d4af37 !important;
+}
+.admin .activity-feed .feed-item .date {
+    color: #94a3b8 !important;
+}
+.admin .list-group-item {
+    background-color: #141722 !important;
+    border-color: rgba(212, 175, 55, 0.15) !important;
+    color: #e2e8f0 !important;
+}
+.admin .scroller {
+    color: #d4af37 !important;
+    background: #0e1017 !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Alerts in Dark */
+.admin .alert-warning {
+    background-color: rgba(212, 175, 55, 0.12) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    color: #f5d77f !important;
+}
+.admin .alert-info {
+    background-color: rgba(99, 102, 241, 0.12) !important;
+    border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    color: #a5b4fc !important;
+}
+.admin .alert-success {
+    background-color: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    color: #6ee7b7 !important;
+}
+.admin .alert-danger {
+    background-color: rgba(239, 68, 68, 0.12) !important;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+    color: #fca5a5 !important;
+}
+
+/* Checkboxes & Radios */
+.admin .checkbox label,
+.admin .radio label {
+    color: #cbd5e1 !important;
+}
+
+/* Screen Options (Dashboard options toggle) */
+.admin .screen-options-btn {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: #f3d36b !important;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+.admin .screen-options-btn:hover {
+    color: #ffd700 !important;
+    background-color: #1c202e !important;
+}
+.admin .screen-options-area {
+    background-color: #141722 !important;
+    border-bottom: 2px solid #d4af37 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Date/Time Picker in Dark */
+.admin .xdsoft_datetimepicker {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #e2e8f0 !important;
+}
+.admin .xdsoft_datetimepicker .xdsoft_calendar td,
+.admin .xdsoft_datetimepicker .xdsoft_calendar th {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.admin .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.admin .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+    background: var(--gold-gradient) !important;
+    color: #0b0d11 !important;
+}
+
+/* Badges, Labels & Tags */
 .label-primary {
     background-color: rgba(212, 175, 55, 0.15) !important;
-    color: #9a6f08 !important;
+    color: #f3d36b !important;
     border: 1px solid rgba(212, 175, 55, 0.4) !important;
     font-weight: 600 !important;
 }
 a.label-primary:hover {
     background-color: rgba(212, 175, 55, 0.3) !important;
-    color: #785304 !important;
-}
-
-/* Form input focus in gold */
-.form-control:focus {
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25) !important;
-}
-
-/* Links */
-a {
-    color: #0f1115;
-    transition: color 0.2s ease;
-}
-a:hover,
-a:focus {
-    color: #b8860b !important;
+    color: #ffd700 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -760,9 +1050,39 @@ body.login_admin.modern-auth-page {
     border: 1px solid rgba(16, 185, 129, 0.5) !important;
     color: #86efac !important;
 }
+.auth-card .alert-warning {
+    background: rgba(212, 175, 55, 0.15) !important;
     border: 1px solid rgba(212, 175, 55, 0.6) !important;
     color: #f3d36b !important;
     border-radius: 8px !important;
     backdrop-filter: blur(8px);
 }
+
+/* --------------------------------------------------------------------------
+   9. DISABLE ALL LOADERS IN ADMIN PANEL
+   -------------------------------------------------------------------------- */
+.admin .dt-loader,
+.admin .dt-loader:not(:required),
+.admin .dt-loader:not(:required):before,
+.admin .dt-loader:not(:required):after,
+.admin .dataTables_processing,
+.admin div.dataTables_processing,
+.admin .table-loading,
+.admin .dt-table-loading:before,
+.admin .dt-table-loading:after,
+.admin #loading,
+.admin .loader,
+.admin .preloader,
+.admin .loading-spinner,
+.admin .table-loading-spinner,
+.admin [class*="dt-loader"],
+div.dt-loader {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -99999 !important;
+    animation: none !important;
+    width: 0 !important;
+    height: 0 !important;
 }
