@@ -86,6 +86,11 @@
                     <i class="fa fa-chevron-down fa-lg"></i>
                 </button>
                 <ul class="mobile-icon-menu tw-inline-flex tw-mt-5">
+                    <li class="header-pwa-mobile ltr:tw-mr-2 rtl:tw-ml-2" id="pwa-install-mobile-icon" style="display: none;">
+                        <a href="#" class="btn-install-pwa-trigger tw-block" data-toggle="tooltip" title="Install App">
+                            <i class="fa-solid fa-download fa-lg" style="color: #d4af37;"></i>
+                        </a>
+                    </li>
                     <?php
                // To prevent not loading the timers twice
             if (is_mobile()) { ?>
@@ -113,6 +118,11 @@
                 <div class="mobile-navbar collapse" id="mobile-collapse" aria-expanded="false" style="height: 0px;"
                     role="navigation">
                     <ul class="nav navbar-nav">
+                        <li class="header-pwa-install-menu" id="pwa-install-mobile-menu" style="display: none;">
+                            <a href="#" class="btn-install-pwa-trigger" style="color: #ffd700 !important; font-weight: 600;">
+                                <i class="fa-solid fa-download tw-mr-2" style="color: #d4af37;"></i> Install BEETRX Web App
+                            </a>
+                        </li>
                         <li class="header-my-profile"><a href="<?php echo admin_url('profile'); ?>">
                                 <?php echo _l('nav_my_profile'); ?>
                             </a>
@@ -142,6 +152,13 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
+                <li class="icon header-pwa-install tw-relative ltr:tw-mr-2 rtl:tw-ml-2" id="pwa-install-nav" style="display: none;">
+                    <a href="#" class="btn-install-pwa-trigger !tw-px-2 tw-group tw-inline-flex tw-items-center" data-toggle="tooltip" title="Install BEETRX Web App" data-placement="bottom">
+                        <span class="pwa-header-pill">
+                            <i class="fa-solid fa-download tw-mr-1.5"></i> <span>Install App</span>
+                        </span>
+                    </a>
+                </li>
                 <?php do_action_deprecated('after_render_top_search', [], '3.0.0', 'admin_navbar_start'); ?>
                 <?php hooks()->do_action('admin_navbar_start'); ?>
                 <?php if (is_staff_member()) { ?>

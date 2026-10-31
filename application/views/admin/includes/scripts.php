@@ -38,4 +38,5 @@ $(function() {
 });
 </script>
 <?php } ?>
+<script src="<?php echo base_url('assets/js/pwa-install.js?v=' . filemtime(FCPATH . 'assets/js/pwa-install.js')); ?>"></script>
 <?php app_admin_footer(); ?>

@@ -9,6 +9,17 @@
     <title>
         <?php echo e(get_option('companyname')); ?> - <?php echo _l('admin_auth_login_heading'); ?>
     </title>
+<!-- Progressive Web App (PWA) Meta & Manifest -->
+    <link rel="manifest" href="<?php echo base_url('manifest.json'); ?>">
+    <meta name="theme-color" content="#0b0d14">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BEETRX CRM">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assets/images/icons/apple-touch-icon.png'); ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('assets/images/icons/icon-152x152.png'); ?>">
+    <link rel="apple-touch-icon" sizes="192x192" href="<?php echo base_url('assets/images/icons/icon-192x192.png'); ?>">
+    <script src="<?php echo base_url('assets/js/pwa-install.js'); ?>" defer></script>
     <?php echo app_compile_css('admin-auth'); ?>
     <link rel="stylesheet" type="text/css" id="fontawesome-css" href="<?php echo base_url('assets/plugins/font-awesome/css/fontawesome.min.css'); ?>">
     <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="<?php echo base_url('assets/plugins/font-awesome/css/solid.min.css'); ?>">
