@@ -232,32 +232,262 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. BUTTONS (ROYAL GOLD & LUXURY BLACK)
+   3. BUTTONS (ROYAL GOLD, LUXURY BLACK & HIGH-CONTRAST HOVER STATES)
    -------------------------------------------------------------------------- */
-.btn-primary,
-button.btn-primary,
-input[type="submit"].btn-primary,
-.tw-bg-primary-600 {
-    background: var(--gold-gradient) !important;
-    border-color: #d4af37 !important;
-    color: #0c0e12 !important;
-    font-weight: 600 !important;
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35) !important;
-    transition: all 0.25s ease !important;
+/* Common button transitions & styling */
+.admin .btn,
+.admin a.btn,
+.admin button.btn {
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary,
-.tw-bg-primary-600:hover,
-.tw-bg-primary-700 {
+/* Primary Button (Gold Gradient) */
+.admin .btn-primary,
+.admin a.btn-primary,
+.admin button.btn-primary,
+.admin input[type="submit"].btn-primary,
+.admin .tw-bg-primary-600 {
+    background: var(--gold-gradient) !important;
+    border: 1px solid #d4af37 !important;
+    color: #0b0d11 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35) !important;
+}
+
+.admin .btn-primary i,
+.admin .btn-primary svg,
+.admin a.btn-primary i,
+.admin a.btn-primary svg {
+    color: #0b0d11 !important;
+    transition: color 0.2s ease !important;
+}
+
+/* Primary Button Hover / Focus / Active */
+.admin .btn-primary:hover,
+.admin a.btn-primary:hover,
+.admin button.btn-primary:hover,
+.admin .btn-primary:focus,
+.admin a.btn-primary:focus,
+.admin button.btn-primary:focus,
+.admin .btn-primary:active,
+.admin a.btn-primary:active,
+.admin button.btn-primary:active,
+.admin .btn-primary.active,
+.admin .open > .dropdown-toggle.btn-primary,
+.admin .tw-bg-primary-600:hover,
+.admin .tw-bg-primary-700 {
     background: var(--gold-gradient-hover) !important;
     border-color: #ffd700 !important;
     color: #000000 !important;
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5) !important;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.6) !important;
     transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.admin .btn-primary:hover i,
+.admin .btn-primary:hover svg,
+.admin a.btn-primary:hover i,
+.admin a.btn-primary:hover svg,
+.admin .btn-primary:focus i,
+.admin .btn-primary:focus svg {
+    color: #000000 !important;
+}
+
+/* Default / Secondary / Card Buttons (Filters, Export, Close, Cancel) */
+.admin .btn-default,
+.admin a.btn-default,
+.admin button.btn-default,
+.admin .dt-button,
+.admin .dt-button.btn-default {
+    background-color: #1a1e2b !important;
+    border: 1px solid rgba(212, 175, 55, 0.28) !important;
+    color: #e2e8f0 !important;
+    font-weight: 500 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.admin .btn-default i,
+.admin .btn-default svg,
+.admin a.btn-default i,
+.admin a.btn-default svg,
+.admin .dt-button i,
+.admin .dt-button svg {
+    color: #f5d77f !important;
+    transition: color 0.2s ease !important;
+}
+
+/* Default Button Hover / Focus / Active */
+.admin .btn-default:hover,
+.admin a.btn-default:hover,
+.admin button.btn-default:hover,
+.admin .btn-default:focus,
+.admin a.btn-default:focus,
+.admin button.btn-default:focus,
+.admin .btn-default:active,
+.admin a.btn-default:active,
+.admin button.btn-default:active,
+.admin .btn-default.active,
+.admin .open > .dropdown-toggle.btn-default,
+.admin .dt-button:hover,
+.admin .dt-button.btn-default:hover {
+    background-color: #24293a !important;
+    border-color: #d4af37 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 12px rgba(212, 175, 55, 0.25) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.admin .btn-default:hover i,
+.admin .btn-default:hover svg,
+.admin a.btn-default:hover i,
+.admin a.btn-default:hover svg,
+.admin .dt-button:hover i {
+    color: #ffd700 !important;
+}
+
+/* Success Button */
+.admin .btn-success,
+.admin a.btn-success,
+.admin button.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    border: 1px solid #059669 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35) !important;
+}
+
+.admin .btn-success:hover,
+.admin a.btn-success:hover,
+.admin button.btn-success:hover,
+.admin .btn-success:focus,
+.admin a.btn-success:focus,
+.admin .btn-success:active,
+.admin a.btn-success:active {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+    border-color: #34d399 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.55) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.admin .btn-success i,
+.admin .btn-success svg,
+.admin a.btn-success i,
+.admin a.btn-success svg {
+    color: #ffffff !important;
+}
+
+/* Danger Button (Delete / Cancel) */
+.admin .btn-danger,
+.admin a.btn-danger,
+.admin button.btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    border: 1px solid #dc2626 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35) !important;
+}
+
+.admin .btn-danger:hover,
+.admin a.btn-danger:hover,
+.admin button.btn-danger:hover,
+.admin .btn-danger:focus,
+.admin a.btn-danger:focus,
+.admin .btn-danger:active,
+.admin a.btn-danger:active {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.55) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.admin .btn-danger i,
+.admin .btn-danger svg,
+.admin a.btn-danger i,
+.admin a.btn-danger svg {
+    color: #ffffff !important;
+}
+
+/* Info Button */
+.admin .btn-info,
+.admin a.btn-info,
+.admin button.btn-info {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    border: 1px solid #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
+}
+
+.admin .btn-info:hover,
+.admin a.btn-info:hover,
+.admin button.btn-info:hover,
+.admin .btn-info:focus,
+.admin a.btn-info:focus,
+.admin .btn-info:active,
+.admin a.btn-info:active {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.55) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.admin .btn-info i,
+.admin .btn-info svg,
+.admin a.btn-info i,
+.admin a.btn-info svg {
+    color: #ffffff !important;
+}
+
+/* Warning Button */
+.admin .btn-warning,
+.admin a.btn-warning,
+.admin button.btn-warning {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    border: 1px solid #b45309 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.admin .btn-warning:hover,
+.admin a.btn-warning:hover,
+.admin button.btn-warning:hover {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    border-color: #f59e0b !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(217, 119, 6, 0.55) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+/* Close & Dismiss Buttons */
+.admin .close,
+.admin button.close {
+    color: #d4af37 !important;
+    opacity: 0.7 !important;
+    text-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+.admin .close:hover,
+.admin button.close:hover,
+.admin .close:focus,
+.admin button.close:focus {
+    color: #ffd700 !important;
+    opacity: 1 !important;
+    transform: scale(1.15);
 }
 
 .tw-border-primary-600 {
@@ -268,14 +498,6 @@ input[type="submit"].btn-primary,
 }
 .tw-ring-primary-500 {
     --tw-ring-color: #d4af37 !important;
-}
-
-/* Outline / Default Buttons */
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active {
-    border-color: #d4af37 !important;
-    color: #aa7c11 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -312,8 +534,16 @@ input[type="submit"].btn-primary,
    5. PANELS, CARDS & WIDGETS (LUXURY BLACK & GOLDEN DARK THEME)
    -------------------------------------------------------------------------- */
 /* Admin Canvas & Workspace Background */
+html,
+html.admin,
 body.admin,
 body.admin #wrapper,
+body.show-sidebar,
+body.page-small,
+body.page-small.show-sidebar,
+body.show-sidebar #wrapper,
+body.page-small.show-sidebar #wrapper,
+#wrapper,
 .admin .content,
 .admin #content {
     background-color: #0b0d14 !important;
@@ -427,18 +657,18 @@ body.admin #wrapper,
     color: #d4af37 !important;
 }
 
-/* Links inside Admin & Cards */
-.admin #wrapper a,
-.admin .panel a,
-.admin .panel_s a,
-.admin .table a {
+/* Links inside Admin & Cards (excluding buttons, labels, badges, tabs, and brand) */
+.admin #wrapper a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle),
+.admin .panel a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle),
+.admin .panel_s a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle),
+.admin .table a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle) {
     color: #f5d77f;
     transition: color 0.2s ease;
 }
-.admin #wrapper a:hover,
-.admin .panel a:hover,
-.admin .panel_s a:hover,
-.admin .table a:hover {
+.admin #wrapper a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle):hover,
+.admin .panel a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle):hover,
+.admin .panel_s a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle):hover,
+.admin .table a:not(.btn):not(.label):not(.badge):not(.logo):not([role="tab"]):not(.dropdown-toggle):hover {
     color: #ffd700 !important;
 }
 
@@ -1085,4 +1315,652 @@ div.dt-loader {
     animation: none !important;
     width: 0 !important;
     height: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. MOBILE VIEW & ALL DROPDOWNS LUXURY DARK THEME OVERHAUL
+   -------------------------------------------------------------------------- */
+
+/* Mobile Header Controls & Toggle Buttons */
+.admin .mobile-menu-toggle,
+.mobile-menu-toggle,
+#header .mobile-menu-toggle {
+    display: block !important;
+    color: #d4af37 !important;
+    background: transparent !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 6px !important;
+    padding: 4px 10px !important;
+    margin-right: 10px !important;
+    line-height: 25px !important;
+    transition: all 0.25s ease !important;
+}
+
+.admin .mobile-menu-toggle:hover,
+.admin .mobile-menu-toggle:focus,
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+    color: #ffd700 !important;
+    background: rgba(212, 175, 55, 0.15) !important;
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Mobile Icon Menu (Header Icons on Mobile) */
+.admin ul.mobile-icon-menu,
+ul.mobile-icon-menu {
+    position: relative !important;
+    margin-bottom: 0 !important;
+}
+
+.admin ul.mobile-icon-menu > li > a,
+ul.mobile-icon-menu > li > a,
+#header ul.mobile-icon-menu > li > a {
+    color: #d4af37 !important;
+    padding: 4px 6px !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin ul.mobile-icon-menu > li > a:hover,
+.admin ul.mobile-icon-menu > li > a:focus,
+ul.mobile-icon-menu > li > a:hover,
+ul.mobile-icon-menu > li > a:focus {
+    color: #ffd700 !important;
+}
+
+.admin ul.mobile-icon-menu > li > a svg,
+ul.mobile-icon-menu > li > a svg {
+    color: #d4af37 !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin ul.mobile-icon-menu > li > a:hover svg,
+ul.mobile-icon-menu > li > a:hover svg {
+    color: #ffd700 !important;
+}
+
+/* Mobile Badges */
+.admin ul.mobile-icon-menu .icon-notifications,
+.admin ul.mobile-icon-menu .icon-started-timers,
+.admin ul.mobile-icon-menu .icon-total-indicator {
+    background-color: #d4af37 !important;
+    color: #0b0d11 !important;
+    font-weight: 700 !important;
+    border: 1px solid #000000 !important;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Mobile Navbar (The Top Menu Dropdown on Mobile) */
+.admin .mobile-navbar,
+.mobile-navbar,
+#header .mobile-navbar {
+    background-color: #12151e !important;
+    border-bottom: 2px solid #d4af37 !important;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.9) !important;
+    z-index: 1000 !important;
+}
+
+.admin .mobile-navbar .navbar-nav,
+.mobile-navbar .navbar-nav {
+    background-color: #12151e !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.admin .mobile-navbar .navbar-nav > li,
+.mobile-navbar .navbar-nav > li {
+    background-color: #12151e !important;
+}
+
+.admin .mobile-navbar .navbar-nav > li > a,
+.mobile-navbar .navbar-nav > li > a,
+#header .mobile-navbar .navbar-nav > li > a {
+    background-color: #12151e !important;
+    color: #e2e8f0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 12px 18px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    display: block !important;
+    text-align: left !important;
+    transition: all 0.2s ease !important;
+}
+
+.admin .mobile-navbar .navbar-nav > li > a:hover,
+.admin .mobile-navbar .navbar-nav > li > a:focus,
+.mobile-navbar .navbar-nav > li > a:hover,
+.mobile-navbar .navbar-nav > li > a:focus,
+#header .mobile-navbar .navbar-nav > li > a:hover {
+    background-color: rgba(212, 175, 55, 0.15) !important;
+    color: #ffd700 !important;
+    padding-left: 24px !important;
+    text-decoration: none !important;
+}
+
+.admin .mobile-navbar .navbar-nav > li:last-child > a,
+.mobile-navbar .navbar-nav > li:last-child > a {
+    border-bottom: none !important;
+}
+
+/* All Dropdowns Universal Luxury Dark Theme (Desktop & Mobile) */
+.admin .dropdown-menu,
+.dropdown-menu,
+.admin #header .dropdown-menu,
+#header .dropdown-menu,
+ul.mobile-icon-menu .dropdown-menu,
+.mobile-menu .dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85) !important;
+    color: #e2e8f0 !important;
+    border-radius: 8px !important;
+}
+
+.admin .dropdown-menu > li > a,
+.dropdown-menu > li > a,
+.admin .dropdown-menu li a,
+.dropdown-menu li a,
+.admin #header .dropdown-menu > li > a,
+#header .dropdown-menu > li > a {
+    color: #e2e8f0 !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.admin .dropdown-menu > li > a:hover,
+.admin .dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.admin .dropdown-menu li a:hover,
+.dropdown-menu li a:hover {
+    background-color: rgba(212, 175, 55, 0.18) !important;
+    color: #ffd700 !important;
+    text-decoration: none !important;
+}
+
+.admin .dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: rgba(212, 175, 55, 0.18) !important;
+    height: 1px !important;
+    margin: 6px 0 !important;
+    border: none !important;
+}
+
+.admin .dropdown-header,
+.dropdown-header {
+    color: #f3d36b !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+    padding-bottom: 6px !important;
+}
+
+/* Quick Create Dropdown Menu Links */
+.admin #header .dropdown-menu a.tw-group,
+.admin #header .dropdown-menu a.tw-group span,
+.admin #header .dropdown-menu a[class*="tw-text-neutral-700"] {
+    color: #e2e8f0 !important;
+}
+
+.admin #header .dropdown-menu a.tw-group:hover,
+.admin #header .dropdown-menu a.tw-group:hover span {
+    color: #ffd700 !important;
+}
+
+.admin #header .dropdown-menu a.tw-group i,
+.admin #header .dropdown-menu a.tw-group svg {
+    color: #f5d77f !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin #header .dropdown-menu a.tw-group:hover i,
+.admin #header .dropdown-menu a.tw-group:hover svg {
+    color: #ffd700 !important;
+}
+
+/* Notifications Dropdown Overhaul */
+.admin .notifications,
+.admin .dropdown-menu.notifications,
+.mobile-menu .dropdown-menu.notifications,
+ul.mobile-icon-menu .notifications {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* "Mark all as read" link in notifications */
+.admin .notifications .tw-text-right a,
+.admin .notifications [onclick*="mark_all_notifications_as_read"],
+.admin .notifications a.tw-text-right {
+    color: #f5d77f !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-decoration: none !important;
+}
+
+.admin .notifications .tw-text-right a:hover,
+.admin .notifications [onclick*="mark_all_notifications_as_read"]:hover {
+    color: #ffd700 !important;
+    text-decoration: underline !important;
+}
+
+/* Individual notification rows */
+.admin .notification-box,
+.admin .notification-wrapper,
+.admin .notification-handler,
+.admin li.notification-wrapper {
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.admin .notification-box:hover,
+.admin .notification-handler:hover,
+.admin li.notification-wrapper:hover {
+    background-color: rgba(212, 175, 55, 0.12) !important;
+}
+
+/* Unread notification items */
+.admin .unread-notification,
+.unread-notification,
+.admin .notification-handler.unread-notification {
+    background-color: rgba(212, 175, 55, 0.08) !important;
+    border-left: 3px solid #d4af37 !important;
+}
+
+.admin .unread-notification:hover,
+.unread-notification:hover,
+.admin .notification-handler.unread-notification:hover {
+    background-color: rgba(212, 175, 55, 0.16) !important;
+}
+
+/* Notification text & timestamps */
+.admin .notifications .media-body,
+.admin .notifications .description,
+.admin .notifications .notification-title,
+.admin .notifications a {
+    color: #e2e8f0 !important;
+}
+
+.admin .notifications .media-body a {
+    color: #f5d77f !important;
+    font-weight: 600 !important;
+}
+
+.admin .notifications .media-body a:hover {
+    color: #ffd700 !important;
+    text-decoration: underline !important;
+}
+
+.admin .notifications .text-muted,
+.admin .notifications small,
+.admin .notifications .notification-time,
+.admin .notifications .not-mark-as-read-inline {
+    color: #94a3b8 !important;
+}
+
+.admin .notifications .not-mark-as-read-inline:hover {
+    color: #ffd700 !important;
+}
+
+/* Bottom footer in notifications (View all notifications) */
+.admin .notifications .tw-bg-neutral-50,
+.admin .notifications div[class*="tw-bg-neutral-50"] {
+    background-color: #0c0e14 !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: #cbd5e1 !important;
+}
+
+.admin .notifications .tw-bg-neutral-50 p,
+.admin .notifications .tw-text-neutral-500 {
+    color: #94a3b8 !important;
+}
+
+/* Started Timers Dropdown */
+.admin .started-timers-top,
+#started-timers-top,
+ul.mobile-icon-menu #started-timers-top,
+.admin ul.started-timers-top {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9) !important;
+    padding: 14px !important;
+}
+
+.admin .started-timers-top li,
+.admin .started-timers-top p,
+.admin .started-timers-top span,
+.admin .started-timers-top .tw-text-gray-900,
+.admin .started-timers-top .tw-text-neutral-600 {
+    color: #cbd5e1 !important;
+}
+
+.admin .started-timers-top a._timer {
+    color: #f5d77f !important;
+    font-weight: 600 !important;
+}
+
+.admin .started-timers-top a._timer:hover {
+    color: #ffd700 !important;
+}
+
+.admin .started-timers-top .text-success {
+    color: #34d399 !important;
+    font-weight: 600 !important;
+}
+
+.admin .started-timers-top hr {
+    border-color: rgba(212, 175, 55, 0.2) !important;
+    margin: 10px 0 !important;
+}
+
+.admin .started-timers-top .unfinished-timesheet-delete {
+    color: #f87171 !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin .started-timers-top .unfinished-timesheet-delete:hover {
+    color: #ef4444 !important;
+}
+
+/* Header Top Search Results & History Dropdowns */
+.admin #top_search .dropdown-menu,
+.admin #search-history,
+.admin #search_results,
+.admin .search-results {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85) !important;
+    color: #e2e8f0 !important;
+}
+
+.admin #top_search .dropdown-menu li a,
+.admin #search-history li a,
+.admin #search_results a,
+.admin .search-results a {
+    color: #e2e8f0 !important;
+    padding: 8px 14px !important;
+}
+
+.admin #top_search .dropdown-menu li a:hover,
+.admin #search-history li a:hover,
+.admin #search_results a:hover,
+.admin .search-results a:hover {
+    background-color: rgba(212, 175, 55, 0.16) !important;
+    color: #ffd700 !important;
+}
+
+/* Submenu & Nested Dropdowns */
+.admin .dropdown-submenu > a,
+.dropdown-submenu > a {
+    color: #e2e8f0 !important;
+}
+
+.admin .dropdown-submenu > a:after,
+.dropdown-submenu > a:after {
+    border-left-color: #d4af37 !important;
+}
+
+.admin .dropdown-submenu:hover > a,
+.admin .dropdown-submenu:focus > a,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+    background-color: rgba(212, 175, 55, 0.18) !important;
+    color: #ffd700 !important;
+}
+
+.admin .dropdown-submenu > .dropdown-menu,
+.dropdown-submenu > .dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+    .admin .dropdown-submenu > a,
+    .dropdown-submenu > a {
+        background-color: transparent !important;
+        color: #e2e8f0 !important;
+    }
+    .admin .dropdown-submenu.pull-left > .dropdown-menu,
+    .dropdown-submenu.pull-left > .dropdown-menu {
+        background-color: #0e111a !important;
+        border-left: 2px solid #d4af37 !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+    }
+}
+
+/* Dashboard Options Panel & Button (.screen-options-area, .screen-options-btn) */
+.admin .screen-options-area,
+.screen-options-area {
+    background: #12151e !important;
+    border-bottom: 2px solid #d4af37 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7) !important;
+    color: #e2e8f0 !important;
+    padding: 12px 30px !important;
+}
+
+.admin .screen-options-area label,
+.screen-options-area label {
+    color: #cbd5e1 !important;
+    font-weight: 500 !important;
+    margin-left: 6px !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin .screen-options-area label:hover,
+.screen-options-area label:hover {
+    color: #ffd700 !important;
+}
+
+.admin .screen-options-area input[type="checkbox"],
+.screen-options-area input[type="checkbox"] {
+    accent-color: #d4af37 !important;
+}
+
+.admin .screen-options-btn,
+.screen-options-btn {
+    background: #1a1e2b !important;
+    color: #d4af37 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-top: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: all 0.25s ease !important;
+}
+
+.admin .screen-options-btn:hover,
+.admin .screen-options-btn:focus,
+.screen-options-btn:hover,
+.screen-options-btn:focus {
+    background: #24293a !important;
+    color: #ffd700 !important;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3) !important;
+}
+
+.admin .screen-options-btn svg,
+.screen-options-btn svg {
+    color: #d4af37 !important;
+    transition: color 0.2s ease !important;
+}
+
+.admin .screen-options-btn:hover svg,
+.screen-options-btn:hover svg {
+    color: #ffd700 !important;
+}
+
+/* DataTables Button Collection Dropdowns (.dt-button-collection) */
+div.dt-button-collection,
+div.dt-button-collection ul.dropdown-menu,
+.admin div.dt-button-collection ul.dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85) !important;
+    border-radius: 8px !important;
+    padding: 6px 0 !important;
+}
+
+div.dt-button-collection div.dt-button-collection-title {
+    background-color: #0e1017 !important;
+    color: #f3d36b !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+    font-weight: 600 !important;
+    padding: 8px 14px !important;
+}
+
+div.dt-button-collection a.dt-button,
+div.dt-button-collection button.dt-button,
+div.dt-button-collection .dt-button {
+    background: #141722 !important;
+    color: #e2e8f0 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 8px 16px !important;
+    text-align: left !important;
+    font-size: 13.5px !important;
+    transition: all 0.2s ease !important;
+}
+
+div.dt-button-collection a.dt-button:hover,
+div.dt-button-collection button.dt-button:hover,
+div.dt-button-collection .dt-button:hover,
+div.dt-button-collection a.dt-button.active,
+div.dt-button-collection button.dt-button.active {
+    background: rgba(212, 175, 55, 0.18) !important;
+    color: #ffd700 !important;
+}
+
+/* Bootstrap Select Dropdown Menus & Searchbox */
+.admin .bootstrap-select .bs-searchbox input,
+.admin .bootstrap-select .bs-searchbox input.form-control {
+    background-color: #0c0e14 !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 6px !important;
+}
+
+.admin .bootstrap-select .bs-searchbox input:focus {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+}
+
+.admin .bootstrap-select .dropdown-menu .inner li a {
+    color: #e2e8f0 !important;
+    padding: 8px 14px !important;
+}
+
+.admin .bootstrap-select .dropdown-menu .inner li a:hover,
+.admin .bootstrap-select .dropdown-menu .inner li.active a,
+.admin .bootstrap-select .dropdown-menu .inner li.selected a {
+    background-color: rgba(212, 175, 55, 0.18) !important;
+    color: #ffd700 !important;
+}
+
+.admin .bootstrap-select .dropdown-menu .inner li.disabled a {
+    color: #64748b !important;
+}
+
+/* Dashboard Filter & Chart Dropdowns */
+.admin ._filter_data .dropdown-menu,
+._filter_data .dropdown-menu,
+.admin [id$="Chartmode"] + .dropdown-menu,
+.admin [id$="-report-mode"] + .dropdown-menu {
+    background-color: #141722 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+.admin ._filter_data .dropdown-menu li a,
+._filter_data .dropdown-menu li a,
+.admin [id$="Chartmode"] + .dropdown-menu li a,
+.admin [id$="-report-mode"] + .dropdown-menu li a {
+    color: #e2e8f0 !important;
+}
+
+.admin ._filter_data .dropdown-menu li a:hover,
+._filter_data .dropdown-menu li a:hover,
+.admin [id$="Chartmode"] + .dropdown-menu li a:hover,
+.admin [id$="-report-mode"] + .dropdown-menu li a:hover {
+    background-color: rgba(212, 175, 55, 0.16) !important;
+    color: #ffd700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. MOBILE SIDEBAR MENU OPEN & MAIN PAGE BACKDROP DARK THEME OVERHAUL
+   -------------------------------------------------------------------------- */
+
+/* Eliminate milky light/white overlay when sidebar opens on mobile */
+@media (max-width: 768px) {
+    body.show-sidebar #wrapper:after,
+    body.page-small.show-sidebar #wrapper:after,
+    body.admin.show-sidebar #wrapper:after,
+    body.admin.page-small.show-sidebar #wrapper:after,
+    .admin.show-sidebar #wrapper:after,
+    .show-sidebar #wrapper:after {
+        background-color: rgba(0, 0, 0, 0.65) !important;
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+        box-shadow: inset 8px 0 25px rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+/* Universal selector fallback for the backdrop overlay */
+body.show-sidebar #wrapper:after,
+body.page-small.show-sidebar #wrapper:after {
+    background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Base canvas background on mobile when sidebar opens */
+html,
+body.show-sidebar,
+body.page-small.show-sidebar,
+body.show-sidebar #wrapper,
+body.page-small.show-sidebar #wrapper {
+    background-color: #0b0d14 !important;
+    background: #0b0d14 !important;
+}
+
+/* Mobile Sidebar Menu (#menu) when opened */
+@media (max-width: 768px) {
+    body.page-small.show-sidebar #menu,
+    body.show-sidebar #menu,
+    .admin #menu {
+        background-color: #0f1116 !important;
+        border-right: 1px solid rgba(212, 175, 55, 0.35) !important;
+        box-shadow: 6px 0 30px rgba(0, 0, 0, 0.9) !important;
+        z-index: 1000 !important;
+    }
+}
+
+/* Ensure text on main page remains high contrast and visible */
+body.show-sidebar #wrapper,
+body.show-sidebar .content,
+body.show-sidebar .panel_s,
+body.show-sidebar .panel-body,
+body.show-sidebar .card,
+body.show-sidebar .widget {
+    color: #e2e8f0 !important;
+}
+
+body.show-sidebar #wrapper h1,
+body.show-sidebar #wrapper h2,
+body.show-sidebar #wrapper h3,
+body.show-sidebar #wrapper h4,
+body.show-sidebar #wrapper h5,
+body.show-sidebar #wrapper h6,
+body.show-sidebar #wrapper .tw-text-neutral-900,
+body.show-sidebar #wrapper .tw-text-neutral-800 {
+    color: #ffffff !important;
+}
+
+body.show-sidebar #wrapper a:not(.btn):not(.label):not(.badge):not(.dropdown-toggle) {
+    color: #f5d77f !important;
 }
